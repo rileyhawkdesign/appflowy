@@ -226,6 +226,15 @@ script = ["""
   """]
 script_runner = "@shell"
 
+[tasks.flutter-build.windows]
+script = ["""
+  cd app_flowy/
+  exec cmd.exe /c flutter clean
+  exec cmd.exe /c flutter pub get
+  exec cmd.exe /c flutter build ${TARGET_OS} --${BUILD_FLAG}
+  """]
+script_runner = "@duckscript"
+
 [tasks.flutter-build-android]
 script = ["""
   cd app_flowy
@@ -238,7 +247,7 @@ script_runner = "@shell"
 
 [tasks.flutter-build-android.windows]
 script = ["""
-  cd app_flowy
+  cd app_flowy/
   exec cmd.exe /c flutter clean
   exec cmd.exe /c flutter pub get
   exec cmd.exe /c flutter build apk --release
