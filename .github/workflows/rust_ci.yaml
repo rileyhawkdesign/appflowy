@@ -1,23 +1,7 @@
 name: Rust-CI
 
 on:
-  push:
-    branches:
-      - "main"
-      - "develop"
-      - "release/*"
-    paths:
-      - "frontend/rust-lib/**"
-      - "shared-lib/**"
-
-  pull_request:
-    branches:
-      - "main"
-      - "develop"
-      - "release/*"
-    paths:
-      - "frontend/rust-lib/**"
-      - "shared-lib/**"
+  workflow_dispatch
 
 env:
   CARGO_TERM_COLOR: always
