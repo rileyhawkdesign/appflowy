@@ -1,26 +1,8 @@
 name: Flutter-CI
 
 on:
-  push:
-    branches:
-      - "main"
-      - "develop"
-      - "release/*"
-    paths:
-      - ".github/workflows/flutter_ci.yaml"
-      - "frontend/**"
-      - "!frontend/appflowy_tauri/**"
-
-  pull_request:
-    branches:
-      - "main"
-      - "develop"
-      - "release/*"
-    paths:
-      - ".github/workflows/flutter_ci.yaml"
-      - "frontend/**"
-      - "!frontend/appflowy_tauri/**"
-
+  workflow_dispatch
+  
 env:
   FLUTTER_VERSION: "3.10.1"
   RUST_TOOLCHAIN: "1.70"
